@@ -1,0 +1,52 @@
+version: 2
+
+_environemnt:
+  WORKSPACE_PATH: &WORKSPACE_PATH /tmp/workspace
+  PROJECT_PATH: &PROJECT_PATH /root/project
+  environment: &environment
+    WORKSPACE_PATH: *WORKSPACE_PATH
+    PROJECT_PATH: *PROJECT_PATH
+
+_reusable_steps:
+  update_npm: &update_npm
+    run:
+      name: Update npm
+      command: npm install npm@6.9.0 -g
+  install_npm_packages: &install_npm_packages
+    run:
+      name: Install npm packages
+      command: npm ci
+
+jobs:
+  build:
+    docker:
+      # TODO circleci/?
+      - image: node:8.11.4
+    environment:
+      <<: *environment_default
+    steps:
+      - checkout
+      - *update_npm
+      - *install_npm_packages
+      - run:
+          name: Build Application
+          command: npm run build
+  test:
+    docker:
+      - image: node:8.11.4
+    environment:
+      <<: *environment_default
+    steps:
+      - checkout
+      - *update_npm
+      - *install_npm_packages
+      - run:
+          name: Unit Tests
+          command: npm run test
+
+workflows:
+  version: 2
+  on_push:
+    jobs:
+      - build
+      - test
