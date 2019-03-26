@@ -23,7 +23,7 @@ jobs:
       # TODO circleci/?
       - image: node:8.11.4
     environment:
-      <<: *environment_default
+      <<: *environment
     steps:
       - checkout
       - *update_npm
@@ -35,7 +35,7 @@ jobs:
     docker:
       - image: node:8.11.4
     environment:
-      <<: *environment_default
+      <<: *environment
     steps:
       - checkout
       - *update_npm
