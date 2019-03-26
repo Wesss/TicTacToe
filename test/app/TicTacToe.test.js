@@ -3,8 +3,8 @@ import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 import { shallow, render } from 'enzyme';
-import App from '../../src/app/App.js';
+import TicTacToe from '../../src/app/TicTacToe.js';
 
 test("renders", () => {
-  var component = render(<App />);
+  var component = render(<TicTacToe />);
 });

@@ -6,3 +6,5 @@ to run
 - npm install npm@6.9.0
 - npm install
 - npm run start
+
+TODO font declaration?
