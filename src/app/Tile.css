@@ -8,4 +8,29 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 40px;
+}
+
+.Tile-X {
+  color: var(--color-red);
+}
+
+.Tile-O {
+  color: var(--color-blue);
+}
+
+.Tile-X-hover {
+  color: var(--color-transparent);
+}
+
+.Tile-X-hover:hover {
+  color: var(--color-red-faded);
+}
+
+.Tile-O-hover {
+  color: var(--color-transparent);
+}
+
+.Tile-O-hover:hover {
+  color: var(--color-blue-faded);
 }

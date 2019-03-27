@@ -1,6 +1,11 @@
 :root {
+  --color-transparent: #00000000;
   --color-black: #000000;
   --color-white: #ffffff;
+  --color-red: #ff0000;
+  --color-red-faded: #ffa0a0;
+  --color-blue: #0000ff;
+  --color-blue-faded: #a0a0ff;
 }
 
 .Body {

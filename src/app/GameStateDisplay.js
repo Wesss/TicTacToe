@@ -1,28 +1,34 @@
 import React, { Component } from "react";
-
-// const GAME_STATE = {
-//   LANDING: "landing",
-//   PLAYING: "playing"
-// };
+import Game from "./Game.js"
 
 class GameStateDisplay extends Component {
 
-  constructor(props) {
-    super(props);
-    // this.state = {gameState: GAME_STATE.LANDING};
+  renderDisplay = (message) => {
   }
 
-  // clickStart = () => {
-  //   this.setState({gameState: GAME_STATE.PLAYING});
-  // }
-
   render() {
-    // switch (this.state.gameState) {
-      // case GAME_STATE.LANDING:
-        return(
-          <div>{this.props.gameState}</div>
-        );
-    // }
+    var message = "";
+    switch (this.props.gameState) {
+      case Game.GAME_STATE.X_MOVE:
+        message = "X's turn";
+        break;
+      case Game.GAME_STATE.O_MOVE:
+        message = "O's turn";
+        break;
+      case Game.GAME_STATE.X_WIN:
+        message = "X Wins!";
+        break;
+      case Game.GAME_STATE.O_WIN:
+        message = "O Wins!";
+        break;
+      case Game.GAME_STATE.TIE:
+        message = "Tie!";
+        break;
+    }
+
+    return(
+      <div className="game-state-display">{message}</div>
+    );
   }
 }
 

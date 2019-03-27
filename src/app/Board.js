@@ -1,15 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import _ from "lodash";
-import Game from "./Game";
-import Tile from "./Tile";
+import Game from "./Game.js";
+import Tile from "./Tile.js";
 import "./Board.css";
-
-const EMPTY_BOARD = [
-  [Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY],
-  [Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY],
-  [Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY]
-];
 
 class Board extends Component {
 
@@ -98,7 +92,11 @@ class Board extends Component {
    */
   constructor(props) {
     super(props);
-    this.state = {board: EMPTY_BOARD};
+    this.state = {board: [
+      [Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY],
+      [Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY],
+      [Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY]
+    ]};
     props.setGameState(Board.getGameState(this.state.board));
   }
 
@@ -110,12 +108,8 @@ class Board extends Component {
     return () => {
       this.setState((state, props) => {
         var board = state.board;
-        console.log(board);
         board[x][y] = Board.getTileStateChange(board[x][y], this.props.gameState);
-        console.log(board);
-        var tmp = Board.getGameState(this.state.board);
-        console.log(tmp);
-        props.setGameState(tmp);
+        props.setGameState(Board.getGameState(this.state.board));
         return {board: board};
       });
     }
@@ -126,7 +120,7 @@ class Board extends Component {
       return _.map(column, (tile, y) => {
         // TODO address keys
         return (
-          <Tile contents={tile} onClick={this.clickTile(x, y)}/>
+          <Tile contents={tile} onClick={this.clickTile(x, y)} gameState={this.props.gameState}/>
         );
       });
     });
