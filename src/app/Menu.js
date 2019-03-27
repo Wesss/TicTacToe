@@ -5,11 +5,11 @@ import React, { Component } from "react";
 //   PLAYING: "playing"
 // };
 
-class GameBoard extends Component {
+class Menu extends Component {
 
   constructor(props) {
     super(props);
-    props.setGameState("PX_MOVE"); //TODO switch to constant
+    // this.state = {gameState: GAME_STATE.LANDING};
   }
 
   // clickStart = () => {
@@ -20,10 +20,10 @@ class GameBoard extends Component {
     // switch (this.state.gameState) {
       // case GAME_STATE.LANDING:
         return(
-          <div>game board</div>
+          <div>menu</div>
         );
     // }
   }
 }
 
-export default GameBoard;
+export default Menu;

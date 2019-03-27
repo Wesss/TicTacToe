@@ -5,7 +5,7 @@ Enzyme.configure({ adapter: new Adapter() });
 import { shallow, render } from 'enzyme';
 import { stub } from 'sinon';
 import Game from '../../src/app/Game.js';
-import GameBoard from '../../src/app/GameBoard.js';
+import Board from '../../src/app/Board.js';
 
 test("renders", () => {
   render(<Game/>);
@@ -13,11 +13,11 @@ test("renders", () => {
 
 test("starts in the uninitiallized state", () => {
   var component = shallow(<Game/>);
-  expect(component.find(GameBoard).props().gameState).toBe(Game.GAME_STATE.UNINITIALLIZED);
+  expect(component.find(Board).props().gameState).toBe(Game.GAME_STATE.UNINITIALLIZED);
 });
 
-test("changes state according to the GameBoard", () => {
+test("changes state according to the Board", () => {
   var component = shallow(<Game/>);
-  component.find(GameBoard).props().setGameState(Game.GAME_STATE.X_MOVE)
-  expect(component.find(GameBoard).props().gameState).toBe(Game.GAME_STATE.X_MOVE);
+  component.find(Board).props().setGameState(Game.GAME_STATE.X_MOVE)
+  expect(component.find(Board).props().gameState).toBe(Game.GAME_STATE.X_MOVE);
 });

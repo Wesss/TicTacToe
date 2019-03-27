@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import GameBoard from "./GameBoard.js";
+import Board from "./Board.js";
 import GameStateDisplay from "./GameStateDisplay.js";
-import GameMenu from "./GameMenu.js";
+import Menu from "./Menu.js";
 
 const GAME_STATE = {
   UNINITIALLIZED: "UNINITIALLIZED",
@@ -31,9 +31,9 @@ class Game extends Component {
   render() {
     return(
       <div>
-        <GameBoard gameState={this.state.gameState} setGameState={this.setGameState}/>
+        <Board gameState={this.state.gameState} setGameState={this.setGameState}/>
         <GameStateDisplay gameState={this.state.gameState}/>
-        <GameMenu gameState={this.state.gameState}/>
+        <Menu gameState={this.state.gameState}/>
       </div>
     );
   }
