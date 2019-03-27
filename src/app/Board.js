@@ -18,19 +18,17 @@ class Board extends Component {
     props.setGameState(Game.GAME_STATE.X_MOVE);
   }
 
-  // clickStart = () => {
-  //   this.setState({gameState: GAME_STATE.PLAYING});
-  // }
+  clickTile = () => {
+    console.log("HELLO CLICK");
+  }
 
   render() {
-    var boardRender = _.map(this.state.board, function(column) {
-      return _.map(column, function(tile) {
+    var boardRender = _.map(this.state.board, (column) => {
+      return _.map(column, (tile) => {
         // TODO address keys
         return (
-          <div className="Board-tile">
-            <Tile contents={tile}/>
-          </div>
-        )
+          <Tile contents={tile} onClick={this.clickTile}/>
+        );
       });
     });
     return(

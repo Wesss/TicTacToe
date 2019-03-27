@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import _ from "lodash";
+import "./Tile.css"
 
 const TILE_STATE = {
   EMPTY: "EMPTY",
@@ -16,7 +17,7 @@ class Tile extends Component {
 
   render() {
     return(
-      <div>
+      <div className="Tile">
         {this.props.contents}
       </div>
     );
