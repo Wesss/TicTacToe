@@ -20,7 +20,6 @@ class Game extends Component {
 
   constructor(props) {
     super(props);
-    // We leave the state ownership to the game board
     this.state = {gameState: GAME_STATE.UNINITIALLIZED};
   }
 

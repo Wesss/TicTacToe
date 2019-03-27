@@ -3,7 +3,6 @@ import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 import { shallow, render } from 'enzyme';
-import { stub } from 'sinon';
 import Game from '../../src/app/Game.js';
 import Board from '../../src/app/Board.js';
 
