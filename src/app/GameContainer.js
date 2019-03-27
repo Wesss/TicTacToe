@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Game from "./Game.js"
 
-const GAME_STATE = {
+const STATE = {
   LANDING: "landing",
   PLAYING: "playing"
 };
@@ -10,23 +10,23 @@ class GameContainer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {gameState: GAME_STATE.LANDING};
+    this.state = {gameState: STATE.LANDING};
   }
 
   clickStart = () => {
-    this.setState({gameState: GAME_STATE.PLAYING});
+    this.setState({gameState: STATE.PLAYING});
   }
 
   render() {
     switch (this.state.gameState) {
-      case GAME_STATE.LANDING:
+      case STATE.LANDING:
         return(
           <button className="start-button" onClick={this.clickStart}>
             START
           </button>
         );
         break;
-      case GAME_STATE.PLAYING:
+      case STATE.PLAYING:
         return(
           <Game/>
         );

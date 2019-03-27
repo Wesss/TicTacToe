@@ -1,28 +1,41 @@
 import React, { Component } from "react";
+import GameBoard from "./GameBoard.js";
+import GameStateDisplay from "./GameStateDisplay.js";
+import GameMenu from "./GameMenu.js";
 
-// const GAME_STATE = {
-//   LANDING: "landing",
-//   PLAYING: "playing"
-// };
+const GAME_STATE = {
+  UNINITIALLIZED: "UNINITIALLIZED",
+  X_MOVE: "X_MOVE",
+  O_MOVE: "O_MOVE",
+  X_WIN: "X_WIN",
+  O_WIN: "O_WIN",
+  TIE: "TIE",
+};
 
 class Game extends Component {
 
-  constructor(props) {
-    super(props);
-    // this.state = {gameState: GAME_STATE.LANDING};
+  static get GAME_STATE() {
+    return GAME_STATE;
   }
 
-  // clickStart = () => {
-  //   this.setState({gameState: GAME_STATE.PLAYING});
-  // }
+  constructor(props) {
+    super(props);
+    // We leave the state ownership to the game board
+    this.state = {gameState: GAME_STATE.UNINITIALLIZED};
+  }
+
+  setGameState = (gameState) => {
+    this.setState({gameState: gameState});
+  }
 
   render() {
-    // switch (this.state.gameState) {
-      // case GAME_STATE.LANDING:
-        return(
-          <div>test</div>
-        );
-    // }
+    return(
+      <div>
+        <GameBoard gameState={this.state.gameState} setGameState={this.setGameState}/>
+        <GameStateDisplay gameState={this.state.gameState}/>
+        <GameMenu gameState={this.state.gameState}/>
+      </div>
+    );
   }
 }
 
