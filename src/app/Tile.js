@@ -17,14 +17,17 @@ class Tile extends Component {
 
   render() {
     return(
-      <div className="Tile">
-        {this.props.contents}
+      <div className="Tile-container" onClick={this.props.onClick}>
+        <div className="Tile">
+          {this.props.contents}
+        </div>
       </div>
     );
   }
 }
 
 Tile.propTypes = {
+  onClick: PropTypes.func,
   contents: PropTypes.oneOf(_.values(TILE_STATE)).isRequired,
 };
 

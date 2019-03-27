@@ -1,3 +1,10 @@
+.Tile-container {
+  height: 100%;
+  width: 100%;
+}
+
 .Tile {
-  place-self: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
