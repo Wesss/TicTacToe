@@ -1,0 +1,9 @@
+.Board {
+  display: inline-grid;
+  grid: 100px 100px 100px / 100px 100px 100px;
+}
+
+.Board-tile {
+  place-self: center;
+  text-align: center;
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import _ from "lodash";
 import Game from "./Game";
 import Tile from "./Tile";
+import "./Board.css";
 
 const EMPTY_BOARD = [
   [Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY, Tile.TILE_STATE.EMPTY],
@@ -24,11 +25,16 @@ class Board extends Component {
   render() {
     var boardRender = _.map(this.state.board, function(column) {
       return _.map(column, function(tile) {
-        return <Tile contents={tile}/> // TODO address keys
+        // TODO address keys
+        return (
+          <div className="Board-tile">
+            <Tile contents={tile}/>
+          </div>
+        )
       });
     });
     return(
-      <div>
+      <div className="Board u-marginSmall">
         {boardRender}
       </div>
     );
