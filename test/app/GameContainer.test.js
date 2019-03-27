@@ -3,20 +3,20 @@ import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 import { shallow, render } from 'enzyme';
+import GameContainer from '../../src/app/GameContainer.js';
 import Game from '../../src/app/Game.js';
-import GameBoard from '../../src/app/GameBoard.js';
 
 test("renders", () => {
-  render(<Game />);
+  render(<GameContainer/>);
 });
 
 test("begins with the start button", () => {
-  var component = shallow(<Game/>);
+  var component = shallow(<GameContainer/>);
   expect(component.find('.start-button').length).toBe(1);
 });
 
 test("moves to the game board when clicking start", () => {
-  var component = shallow(<Game/>);
+  var component = shallow(<GameContainer/>);
   component.find('.start-button').simulate('click');
-  expect(component.find(GameBoard).length).toBe(1);
+  expect(component.find(Game).length).toBe(1);
 });

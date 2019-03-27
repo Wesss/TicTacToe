@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Game from "./Game.js"
+import GameContainer from "./GameContainer.js"
 import "./TicTacToe.css"
 
 class TicTacToe extends Component {
@@ -7,7 +7,7 @@ class TicTacToe extends Component {
     return(
       <div>
         <h1 className="Title">Tic Tac Toe!</h1>
-        <Game/>
+        <GameContainer/>
       </div>
     );
   }
