@@ -1,4 +1,6 @@
 .Board {
   display: inline-grid;
   grid: 100px 100px 100px / 100px 100px 100px;
+  grid-gap: 4px;
+  background-color: var(--color-black);
 }
