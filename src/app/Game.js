@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GameBoard from "./GameBoard.js"
 
 const GAME_STATE = {
   LANDING: "landing",
@@ -20,16 +21,14 @@ class Game extends Component {
     switch (this.state.gameState) {
       case GAME_STATE.LANDING:
         return(
-          <button onClick={this.clickStart}>
+          <button className="start-button" onClick={this.clickStart}>
             START
           </button>
         );
         break;
       case GAME_STATE.PLAYING:
         return(
-          <div>
-            game~
-          </div>
+          <GameBoard/>
         );
         break;
     }

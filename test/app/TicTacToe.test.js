@@ -6,5 +6,5 @@ import { shallow, render } from 'enzyme';
 import TicTacToe from '../../src/app/TicTacToe.js';
 
 test("renders", () => {
-  var component = render(<TicTacToe />);
+  render(<TicTacToe />);
 });
