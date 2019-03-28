@@ -118,9 +118,9 @@ class Board extends Component {
   render() {
     var boardRender = _.map(this.state.board, (column, x) => {
       return _.map(column, (tile, y) => {
-        // TODO address keys
+        var key = x + " " + y + " " + tile;
         return (
-          <Tile contents={tile} onClick={this.clickTile(x, y)} gameState={this.props.gameState}/>
+          <Tile key={key} contents={tile} onClick={this.clickTile(x, y)} gameState={this.props.gameState}/>
         );
       });
     });
