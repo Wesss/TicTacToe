@@ -9,8 +9,16 @@ class Menu extends Component {
   }
 
   render() {
+    var quitButtonText = "";
+    if (this.props.gameState === Game.GAME_STATE.X_MOVE || this.props.gameState === Game.GAME_STATE.O_MOVE) {
+      quitButtonText = "Quit";
+    } else {
+      quitButtonText = "Restart";
+    }
     return(
-      <button className="Button" onClick={this.props.quit}>Quit</button>
+      <button className="Button" onClick={this.props.quit}>
+        {quitButtonText}
+      </button>
     );
   }
 }

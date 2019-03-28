@@ -125,7 +125,7 @@ class Board extends Component {
       });
     });
     return(
-      <div className="Board u-marginSmall">
+      <div className="Board u-marginBot">
         {boardRender}
       </div>
     );

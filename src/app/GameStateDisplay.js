@@ -25,7 +25,7 @@ class GameStateDisplay extends Component {
     }
 
     return(
-      <div className="Game-state-display">{message}</div>
+      <div className="Game-state-display u-marginBot">{message}</div>
     );
   }
 }
