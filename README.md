@@ -1,10 +1,12 @@
 # Tic-Tac-Toe
 
 ## Running the Game
+In the email I used to submit this game, I've included a dist.tar bundle. Extract that, and then open the `index.html` file in your favorite browser.
+
+If you want to build the game from source, then do the following:
 1. clone or download this repository
 2. install nodejs if you haven't already, following the instructions here: https://nodejs.org/en/download/
 3. run the following in the repository's root directory
-
 ```
 npm install npm@6.9.0
 npm ci
