@@ -14,6 +14,6 @@ test("renders", () => {
 test("calls the quit callback when quit is clicked", () => {
   var quitStub = stub();
   var component = shallow(<Menu gameState={Game.GAME_STATE.X_MOVE} quit={quitStub}/>);
-  component.find(".menu-button").simulate('click');
+  component.find(".Button").simulate('click');
   expect(quitStub.called).toBe(true);
 });

@@ -12,18 +12,18 @@ test("renders", () => {
 
 test("begins with the start menu", () => {
   var component = shallow(<GameContainer/>);
-  expect(component.find('.start-button').length).toBe(1);
+  expect(component.find('.Button').length).toBe(1);
 });
 
 test("moves to the game board when clicking start", () => {
   var component = shallow(<GameContainer/>);
-  component.find('.start-button').simulate('click');
+  component.find('.Button').simulate('click');
   expect(component.find(Game).length).toBe(1);
 });
 
 test("moves to the start menu when clicking quit", () => {
   var component = shallow(<GameContainer/>);
-  component.find('.start-button').simulate('click');
+  component.find('.Button').simulate('click');
   component.find(Game).props().quit();
-  expect(component.find('.start-button').length).toBe(1);
+  expect(component.find('.Button').length).toBe(1);
 });

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import Board from "./Board.js";
 import GameStateDisplay from "./GameStateDisplay.js";
 import Menu from "./Menu.js";
@@ -37,5 +38,9 @@ class Game extends Component {
     );
   }
 }
+
+Game.propTypes = {
+  quit: PropTypes.func.isRequired,
+};
 
 export default Game;

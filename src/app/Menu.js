@@ -10,7 +10,7 @@ class Menu extends Component {
 
   render() {
     return(
-      <button className="menu-button" onClick={this.props.quit}>Quit</button>
+      <button className="Button" onClick={this.props.quit}>Quit</button>
     );
   }
 }

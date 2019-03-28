@@ -25,7 +25,7 @@ class GameContainer extends Component {
     switch (this.state.gameState) {
       case STATE.LANDING:
         return(
-          <button className="start-button" onClick={this.clickStart}>
+          <button className="Button" onClick={this.clickStart}>
             START
           </button>
         );

@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import Game from "./Game.js"
+import Game from "./Game.js";
+import "./GameStateDisplay.css";
 
 class GameStateDisplay extends Component {
-
-  renderDisplay = (message) => {
-  }
 
   render() {
     var message = "";
@@ -27,7 +25,7 @@ class GameStateDisplay extends Component {
     }
 
     return(
-      <div className="game-state-display">{message}</div>
+      <div className="Game-state-display">{message}</div>
     );
   }
 }
