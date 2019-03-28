@@ -32,7 +32,7 @@ class Game extends Component {
       <div>
         <Board gameState={this.state.gameState} setGameState={this.setGameState}/>
         <GameStateDisplay gameState={this.state.gameState}/>
-        <Menu gameState={this.state.gameState}/>
+        <Menu gameState={this.state.gameState} quit={this.props.quit}/>
       </div>
     );
   }

@@ -1,29 +1,23 @@
 import React, { Component } from "react";
-
-// const GAME_STATE = {
-//   LANDING: "landing",
-//   PLAYING: "playing"
-// };
+import PropTypes from "prop-types";
+import Game from "./Game.js"
 
 class Menu extends Component {
 
   constructor(props) {
     super(props);
-    // this.state = {gameState: GAME_STATE.LANDING};
   }
-
-  // clickStart = () => {
-  //   this.setState({gameState: GAME_STATE.PLAYING});
-  // }
 
   render() {
-    // switch (this.state.gameState) {
-      // case GAME_STATE.LANDING:
-        return(
-          <div>menu</div>
-        );
-    // }
+    return(
+      <button className="menu-button" onClick={this.props.quit}>Quit</button>
+    );
   }
 }
+
+Menu.propTypes = {
+  quit: PropTypes.func.isRequired,
+  gameState: PropTypes.any.isRequired
+};
 
 export default Menu;

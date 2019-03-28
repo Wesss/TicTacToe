@@ -17,6 +17,6 @@ test("starts in the uninitiallized state", () => {
 
 test("changes state according to the Board", () => {
   var component = shallow(<Game/>);
-  component.find(Board).props().setGameState(Game.GAME_STATE.X_MOVE)
+  component.find(Board).props().setGameState(Game.GAME_STATE.X_MOVE);
   expect(component.find(Board).props().gameState).toBe(Game.GAME_STATE.X_MOVE);
 });

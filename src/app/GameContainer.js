@@ -17,6 +17,10 @@ class GameContainer extends Component {
     this.setState({gameState: STATE.PLAYING});
   }
 
+  quit = () => {
+    this.setState({gameState: STATE.LANDING});
+  }
+
   render() {
     switch (this.state.gameState) {
       case STATE.LANDING:
@@ -28,7 +32,7 @@ class GameContainer extends Component {
         break;
       case STATE.PLAYING:
         return(
-          <Game/>
+          <Game quit={this.quit}/>
         );
         break;
     }
